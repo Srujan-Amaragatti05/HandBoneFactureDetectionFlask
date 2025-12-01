@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /* box-sizing: border-box; */
+        }
+
+        body {
+            background-image: url("/images/background_img.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .nav {
+            background-color: rgb(69, 69, 69);
+            display: flex;
+            height: 10vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .hbtn {
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: 600;
+            /* padding-left: 40px; */
+        }
+
+        .section>div:nth-child(1) {
+            height: 80px;
+            /* background-color: white; */
+            display: flex;
+            justify-content: center;
+            position: relative;
+            /* bottom: 0; */
+        }
+
+        div>.head-text {
+            /* color: red; */
+            font-size: 2.5rem;
+            position:absolute;
+            bottom: 0;
+        }
+
+        .section>div:nth-child(2) {
+            display: flex;
+            justify-content: center;
+        }
+
+        div>img {
+            margin-top: 10px;
+        }
+
+        .section>div:nth-child(3) {
+            /* color: #41B2E3; */
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            margin-top: 20px;
+        }
+
+        .text {
+            font-size: 2rem;
+        }
+
+        .res-y {
+            font-size: 1.5rem;
+            color: green;
+        }
+
+        .res-n {
+            font-size: 1.5rem;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <header class="nav">
+            <h1 class="heading">HAND BONE FRACTURE DETECTION</h1>
+            <a href="/" class="hbtn">HOME</a>
+        </header>
+        <div class="section">
+            <div>
+                <div class="head-text">Result</div>
+            </div>
+            <div>
+                <img src="../images/{{ image_name }}" alt="Result Image"  width=280px height=280px />
+            </div>
+            <div>
+                {% if predvalue %}
+                <span class="res-n">Bone Fracture Detected</span>{% else %}
+                <span class="res-y">No Bone Fracture Detected</span>{% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+    <!-- <link rel="stylesheet" href="/static/CSS/upload.css"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /* box-sizing: border-box; */
+        }
+
+        body {
+            background-image: url("/images/background_img.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .nav {
+            background-color: rgb(69, 69, 69);
+            display: flex;
+            height: 10vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .hbtn {
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: 600;
+            /* padding-left: 40px; */
+        }
+
+        .section{
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        .text  {
+            position: absolute;
+            font-weight: 600;
+            font-size: 2rem;
+            bottom: 0;
+            /* margin-bottom: 10px; */
+        }
+
+        .upload {
+            display: flex;
+            justify-content: center;
+        }
+        .upload-btn {
+            height: 2rem;
+            width: 6rem;
+            font-weight: 600;
+            font-size: 0.8rem;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-bottom: 40px
+        }
+
+        .footer {
+            display: flex;
+            justify-content: center;
+        }
+
+        .result-btn {
+            height: 3rem;
+            width: 25rem;
+            background-color: rgba(0, 0, 0, 0.6);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: black;
+        }
+        
+        .heading{
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <header class="nav">
+            <h1 class="heading">HAND BONE FRACTURE DETECTION</h1>
+            <a href="/index" class="hbtn">HOME</a>
+        </header>
+        <div class="section">
+            <div class="text">Upload Hand Bone X-rays:</div><br />
+        </div>
+        <div class="upload">
+            <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" accept="image/*" required>
+                <div class="footer">
+                    <a href="">
+                        <button class="result-btn" type="submit">Check Result</button>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
